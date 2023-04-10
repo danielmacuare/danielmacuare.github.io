@@ -7,8 +7,9 @@ Gemfile.lock
 .jekyll-cache
 _site
 
-# RubyGems
+# Ruby
 *.gem
+.ruby-version
 
 # NPM dependencies
 node_modules
