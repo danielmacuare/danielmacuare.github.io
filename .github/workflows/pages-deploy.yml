@@ -2,7 +2,7 @@ name: "Build and Deploy"
 on:
   push:
     branches:
-      - master # Possible Issue: https://github.com/cotes2020/jekyll-theme-chirpy/issues/502#issuecomment-1060960024
+      - main # Possible Issue: https://github.com/cotes2020/jekyll-theme-chirpy/issues/502#issuecomment-1060960024
     paths-ignore:
       - .gitignore
       - README.md
