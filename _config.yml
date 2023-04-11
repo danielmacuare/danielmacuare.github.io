@@ -20,10 +20,10 @@ timezone: "Europe/London"
 
 title: DMAC.tech # the main title
 
-tagline: Let's learn together! # it will display as the sub-title
+tagline: Clouds, Networking, Automation and tech stuff! # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  All things Networking and Automation
+  All things Cloud, Networking and Automation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://danielmacuare.github.io"
@@ -31,23 +31,20 @@ url: "https://danielmacuare.github.io"
 linkedin:
   username: danielmacuare
 github:
-  username: danielmacuare # change to your github username
+  username: danielmacuare
 
 twitter:
-  username: techdmac # change to your twitter username
+  username: techdmac
 
 social:
-  # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Daniel Macuare
-  email: danielmacuare.uk@gmail.com # change to your email address
+  email: danielmacuare.uk@gmail.com
   links:
     # The first element serves as the copyright owner's link
     - https://www.linkedin.com/in/danielmacuare/?locale=en_US
     - https://twitter.com/techdmac # change to your twitter homepage
     - https://github.com/danielmacuare # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
 
 google_site_verification: # fill in to your verification string
 
@@ -72,7 +69,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: # [light|dark]
+theme_mode: 
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -82,7 +79,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: assets/img/avatar/dmac_black.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
