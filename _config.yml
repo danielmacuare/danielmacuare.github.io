@@ -5,7 +5,7 @@ theme: jekyll-theme-chirpy
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
-baseurl: ""
+baseurl: "https://blog.dmac.tech"
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   All things Cloud, Networking and Automation.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://danielmacuare.github.io"
+url: ""
 
 linkedin:
   username: danielmacuare
@@ -39,7 +39,7 @@ twitter:
 social:
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Daniel Macuare
-  email: danielmacuare.uk@gmail.com
+  email: daniel280187@hotmail.com
   links:
     # The first element serves as the copyright owner's link
     - https://www.linkedin.com/in/danielmacuare/?locale=en_US
