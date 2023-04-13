@@ -1,4 +1,5 @@
 ---
+author: dmac
 title: How to enable code-completion in VScode for Boto3?
 date: 2020-09-11 10:00:00 +0100
 categories: [cloud, productivity]
