@@ -5,9 +5,7 @@
 @mixin btn-sharing-color($light-color, $important: false) {
   @if $important {
     color: var(--btn-share-color, $light-color) !important;
-  }
-
-  @else {
+  } @else {
     color: var(--btn-share-color, $light-color);
   }
 }
@@ -46,8 +44,8 @@
   }
 }
 
-h1+.post-meta {
-  span+span::before {
+h1 + .post-meta {
+  span + span::before {
     @include dot;
   }
 
@@ -72,7 +70,7 @@ h1+.post-meta {
   .license-wrapper {
     line-height: 1.2rem;
 
-    >a {
+    > a {
       color: var(--text-color);
 
       &:hover {
@@ -83,9 +81,7 @@ h1+.post-meta {
     span:last-child {
       font-size: 0.85rem;
     }
-  }
-
-  /* .license-wrapper */
+  } /* .license-wrapper */
 
   .post-meta a:not(:hover) {
     @extend %link-underline;
@@ -101,7 +97,7 @@ h1+.post-meta {
     .share-icons {
       font-size: 1.2rem;
 
-      >i {
+      > i {
         position: relative;
         bottom: 1px;
 
@@ -120,7 +116,7 @@ h1+.post-meta {
         &:hover {
           text-decoration: none;
 
-          >i {
+          > i {
             @extend %btn-share-hovor;
           }
         }
@@ -147,16 +143,12 @@ h1+.post-meta {
           @include btn-sharing-color(rgb(229, 20, 43));
         }
       }
-    }
-
-    /* .share-icons */
+    } /* .share-icons */
 
     .fas.fa-link {
       @include btn-sharing-color(rgb(171, 171, 171));
     }
-  }
-
-  /* .share-wrapper */
+  } /* .share-wrapper */
 }
 
 .post-tags {
@@ -221,9 +213,7 @@ h1+.post-meta {
     margin-top: 0.3rem;
     white-space: normal;
   }
-}
-
-/* .post-navigation */
+} /* .post-navigation */
 
 @-webkit-keyframes fade-up {
   from {
@@ -320,7 +310,7 @@ h1+.post-meta {
 /* --- Related Posts --- */
 
 #related-posts {
-  >h3 {
+  > h3 {
     @include label(1.1rem, 600);
   }
 
@@ -365,7 +355,7 @@ h1+.post-meta {
 #tail-wrapper {
   min-height: 2rem;
 
-  >div:last-of-type {
+  > div:last-of-type {
     margin-bottom: 2rem;
   }
 
@@ -395,7 +385,7 @@ h1+.post-meta {
   .post-tail-bottom {
     flex-wrap: wrap-reverse !important;
 
-    >div:first-child {
+    > div:first-child {
       width: 100%;
       margin-top: 1rem;
     }
@@ -403,9 +393,8 @@ h1+.post-meta {
 }
 
 @media all and (max-width: 768px) {
-  .post-content>p>img {
+  .post-content > p > img {
     max-width: calc(100% + 1rem);
-    border-radius: 30%;
   }
 }
 
