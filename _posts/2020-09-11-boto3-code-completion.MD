@@ -7,6 +7,7 @@ tags: [python, aws]
 ---
 
 # How to enable code-completion in VScode for Boto3?
+
 ![VsCode Boto3](../../assets/img/posts/dm.png){: w="700" h="400" }
 
 While working with AWS [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/create_transit_gateway_vpc_attachment.html#) I found myself constantly jumping to the AWS documentation to look for the methods I needed. I wondered if there was any code-completion for it instead?
