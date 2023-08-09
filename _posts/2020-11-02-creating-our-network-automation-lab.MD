@@ -103,9 +103,9 @@ Download and Install [Vagrant](https://developer.hashicorp.com/vagrant/downloads
 ### For Linux Users
 
 - Download and Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-Download and Install [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
+- Download and Install [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 
-## Let the fun begin:
+## Let the fun begin!
 
 After successfully installing VirtualBox and Vagrant, we can clone the repository and run a vagrant up to see the magic in action.
 
