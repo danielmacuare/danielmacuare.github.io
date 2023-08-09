@@ -6,7 +6,7 @@ categories: [networking]
 tags: [automation]
 ---
 
-# What is Network Automation?
+## What is Network Automation?
 
 Let’s start with a simple definition: Network Automation is the process of automating manual, repetitive or complex tasks to improve the consistency of your network, reduce human errors, lower operational costs and ultimately helps you run your network more efficiently. Although you won’t get a one-size-fits-all definition in this article, I want to give you a clearer idea of what it is and what it is not.
 
