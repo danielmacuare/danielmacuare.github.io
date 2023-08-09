@@ -1,6 +1,6 @@
 ---
 author: dmac
-title: (Draft) Creating our Network Automation Lab
+title: Creating our Network Automation Lab
 date: 2020-11-02 10:00:00 +0100
 categories: [networking]
 tags: [automation, lab]
