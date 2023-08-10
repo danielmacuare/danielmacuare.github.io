@@ -31,7 +31,7 @@ _Figure 2 - (EOS/IOS) show ip bgp summary_
 ![show interfaces](../../assets/img/posts/2020-04-02/fig3-ios-show-interfaces.png){: w="900" h="600" }
 _Figure 3 - (EOS/IOS) show interfaces_
 
-## Reading route-maps (EOS/IOS)
+### Reading route-maps (EOS/IOS)
 
 ![show route-maps](../../assets/img/posts/2020-04-02/fig4-ios-show-route-maps.png){: w="900" h="600" }
 _Figure 4 - (EOS/IOS) show route-maps_
