@@ -1,7 +1,7 @@
 ---
 author: dmac
 title: Network Automation - Why is it important?
-date: 2020-09-14 10:00:00 +0100
+date: 2020-09-21 10:00:00 +0100
 categories: [networking]
 tags: [automation]
 ---
