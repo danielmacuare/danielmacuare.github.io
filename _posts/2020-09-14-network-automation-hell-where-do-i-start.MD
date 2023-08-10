@@ -40,7 +40,7 @@ This guy is the Rockstar of the Python world for newcomers. Make sure to check o
 
 This site is fantastic! The explanations are great, filled with visualisations and code snippets. Although some content is paid, you can find a long and in-depth how-to about Python for Free. The Requests package in Python is commonly used to query APIs. You can see a great article about it by clicking in the logo at your right.
 
-[![Real Python](../../assets/img/posts/2020-09-14/real-python-logo.jpg){: w="900" h="600" }](https://realpython.com/)
+[![Real Python](../../assets/img/posts/2020-09-14/real-python-logo.jpg){: w="900" h="600" }](https://realpython.com/){:target="_blank"}
 
 <h3 style="text-align: center;">Dmitry Figol’s Streams</h3>
 Dmitry is one of the maintainers of the nornir python package, and he constantly streams about Network Automation topics. These are long streams, but the amount of things you can learn from those streams is incredible. I’m shocked that this guy only has 4.5K subs in his Youtube channel. If you go through his videos, you will see him learning and his thought process when learning about new topics.
