@@ -16,7 +16,7 @@ At first, I started creating the Wordpress blog manually by installing all the p
 
 After having a working prototype and understanding how to create my LAMP (Linux-Apache-MySQL-PHP) stack I then decided to try and automate this process using Ansible. Since I learn the most by doing I thought I would use this opportunity to improve my skills and gain more experience with this tool.
 
-The whole experience took me around 6 months of learnings and experimentation. By the 6 months mark, I had automated the creation of my own local wordpress instance by running a `vagrant up` . I also had gained so more experience on:
+The whole experience took me around 6 months of learnings and experimentation. By the 6 months mark, I had automated the creation of my own local wordpress instance by running a `vagrant up`. I had also gained so more experience on:
 
 - Vagrant
 - Shell Scripting
@@ -27,7 +27,7 @@ The whole experience took me around 6 months of learnings and experimentation. B
 > - This is the Diagram of the process used to deploy the Worpdress instance using Vagrant: [Diagram](https://github.com/danielmacuare/Centos7_WP/blob/master/shared/ansible/Wordpress_ansible.pdf)
 {: .prompt-tip }
 
-After all this work, I realised something I had suspected all along. I wasn't exactly thrilled about the idea of maintaining all Wordpress moving parts. My main aim was to dive into blogging, not to have to maintain all the software an elements of the LAMP stack after its deployment. Eventually, I just gave up on the whole thing and focused on getting better at Networking and Automation.
+After all this work, I realised something I had suspected all along. I wasn't exactly thrilled about the idea of maintaining all Wordpress moving parts. My main aim was to dive into blogging, not to have to maintain all the software elements of the LAMP stack after its deployment. Eventually, I just gave up on the whole thing and focused on getting better at Networking and Automation.
 
 A few years later, around 2020, I discovered a service offered by AWS called [AWS Lightsail](https://aws.amazon.com/lightsail/projects/wordpress/). The interesting point about it was that I now was able to deploy my Wordpress instance in minutes without the hassle of maintaining it. I only had to worry about blogging (Or at least, that's what I thought).
 
@@ -43,7 +43,7 @@ To create and edit my posts I was using [Elementor](https://elementor.com/), a h
 
 - [No native syntax highlighting as of 2020.](https://github.com/elementor/elementor/issues/5815#issuecomment-687565427)
 
-- Pretty difficult to troubleshoot: There were so many layers of abstraction, every pluging was a new way to mess up your configuration. Often times I had to disable all plugins one by one to try to understand why a post would not show up. Elementor was also yet another layer of abstraction and it was pretty complex to find whether a post was failing because of Elementor, the theme, some plugins, or an error in Wordpress.
+- Complex to troubleshoot: There were so many layers of abstraction, every pluging introduced a new way to mess up your configuration. Often times I had to disable all plugins one by one to try to understand why a post would not show up. Elementor was also another layer of abstraction and it was pretty tough to find whether a post was failing because of Elementor, the theme, some plugins, or an error in Wordpress.
 
 I've got to say I'm not an expert with Wordpress and its components and there probably are some workarounds for all my issues but I didn't really want to spend so much time trying to make it work to my liking. All I really wanted was an easy way to create, test, and get my blog out there with some basic requirements.
 
@@ -105,7 +105,7 @@ While testing the theme, I discovered that not only it was easy to use and custo
 
 ## Results
 
-- I can now write my blog posts using Markdown. [See the source code of this post](https://github.com/danielmacuare/danielmacuare.github.io/tree/prod/_posts)
+- I can now write my blog posts using Markdown. [See the source code of this post](https://github.com/danielmacuare/danielmacuare.github.io/blob/prod/_posts/2023-08-14-from-wordpress-to-jekyll.MD)
 - I have reduced my deployment time from hours in Wordpress to less than a minute with Jekyll. With one commit, GitHub Actions runs automatically to deploy my site to github pages. Example of the [CD Pipeline](https://github.com/danielmacuare/danielmacuare.github.io/actions/workflows/pages-deploy.yml)
 - I can create my post locally in my computer side by side and test it live.
 - I have saved 90 USD annually by hosting my blog in Github Pages instead of AWS.
