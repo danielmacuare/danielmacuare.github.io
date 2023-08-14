@@ -28,6 +28,7 @@ In the Network Automation world, Python and Go are two popular programming langu
 The reason I would recommend a programming language as a starting point is that it will give you more flexibility in the future to tackle problems in multiple fronts, not only in the Network Automation area. For example, last week, I was using Python to create a Lambda function in AWS that would send alerts to our Slack channel when Internet traffic exceeds a certain threshold in our VPCs. I was able to complete this task because of the flexibility that a programming language gives you.
 
 ## Resources
+
 Since we are avoiding getting into the Automation hell, I’m going only to show you the 4 best resources that I’ve come across when learning Python, and the great news is that they are totally FREE!
 
 <h3 style="text-align: center;">Corey Schafer</h3>
@@ -83,6 +84,6 @@ When I began my journey, I remember feeling overwhelmed at times. One of the fir
 
 This post is a self-reflection on what would I have done differently if I had to start again in Network Automation.
 
-I hope this post helps you decide where you should start. Wherever that is, keep curious and enjoy the journey. It takes time, lot of practice and continuous improvement. Keep working your craft day by day, week by week. 
+I hope this post helps you decide where you should start. Wherever that is, keep curious and enjoy the journey. It takes time, lot of practice and continuous improvement. Keep working your craft day by day, week by week.
 
 I would like to hear what is the best resource (Video/Blog/Person) you have used to learn about Network Automation.
