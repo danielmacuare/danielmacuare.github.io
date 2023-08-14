@@ -26,7 +26,7 @@ Ansible, for example, is one of the most used orchestration tools in the Network
 
 To continue, I’d love it if we can agree with the fact that Network Automation is NOT the solution for all our problems. I must admit I cringe every time I hear phrases like: “We need to automate all our network” or “let’s automate it ” without even thinking on the extent of the changes needed.
 
-Is crucial to be intentional and evaluate the effort vs reward ratio when considering automation. To illustrate this point, think on one task that you do once every couple of months (and let’s call it “Task Y”). We estimate that “Task Y” takes us 4 minutes to complete so if we do some basic maths we can state that doing “Task Y” only takes us 24 minutes a year. 
+Is crucial to be intentional and evaluate the effort vs reward ratio when considering automation. To illustrate this point, think on one task that you do once every couple of months (and let’s call it “Task Y”). We estimate that “Task Y” takes us 4 minutes to complete so if we do some basic maths we can state that doing “Task Y” only takes us 24 minutes a year.
 
 > <center>“Task Y” – Time spent per year</center>  
 > <center>4 minutes * (12/2 = 6 times a year) = 24 minutes a year</center>
