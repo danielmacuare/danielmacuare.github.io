@@ -1,7 +1,7 @@
 ---
 author: dmac
 title: "From Wordpress to Jekyll: The joy of blogging again."
-date: 2023-08-14 16:34:00 +100
+date: 2023-08-14 00:00:00 +100
 categories: [networking]
 tags: [automation]
 ---
@@ -68,14 +68,14 @@ While watching one of my favourites Youtubers [(Kudos to Techno Tim)](https://ww
 
 ## What is a Static Site Generator (SSG)?
 
-In a very simplistic way, a SSG is a tool that lets you define text files (Can be based on Markdown) and use templates to render a website in HTML. In some cases, Static Site Generators are a great alternative to full blown Content Management Systems (CMS) like Wordpress as they don't require connection to a database and they don't require the server to render the HTML page based on infomation coming from a database.
+In a very simplistic way, a SSG is a tool that lets you define text files (Can be based on Markdown) and use templates to render a website in HTML. In some cases, Static Site Generators are a great alternative to full blown Content Management Systems (CMS) like Wordpress as they don't require connection to a database and they don't require the server to render the HTML page based on information coming from a database.
 
 The main benefits of SSG over a CMS are:
 
 - Speed and performance
 - Reduced maintenance
 - Simplicity
-- Portabililty
+- Portability
 - Cost-efficiency
 
 ### Chirpy Theme FTW
@@ -100,10 +100,10 @@ While testing the theme, I discovered that not only it was easy to use and custo
 - [Youtube integration](https://chirpy.cotes.page/posts/write-a-new-post/#videos)
 - [Nice UI](https://chirpy.cotes.page/)
 - [Powerful search options for my posts](https://chirpy.cotes.page/posts/getting-started/)
-- [Github Actions](https://github.com/danielmacuare/danielmacuare.github.io/actions) 
+- [Github Actions](https://github.com/danielmacuare/danielmacuare.github.io/actions)
 - [Customizable CSS](https://chirpy.cotes.page/posts/getting-started/#customizing-stylesheet)
 
-## Results!
+## Results
 
 - I can now write my blog posts using Markdown. [See the source code of this post](https://github.com/danielmacuare/danielmacuare.github.io/tree/prod/_posts)
 - I have reduced my deployment time from hours in Wordpress to less than a minute with Jekyll. With one commit, GitHub Actions runs automatically to deploy my site to github pages. Example of the [CD Pipeline](https://github.com/danielmacuare/danielmacuare.github.io/actions/workflows/pages-deploy.yml)
