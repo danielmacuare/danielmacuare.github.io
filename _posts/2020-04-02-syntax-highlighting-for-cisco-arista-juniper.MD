@@ -4,9 +4,8 @@ title: Syntax Highlighting for Cisco/Arista/Juniper CLI
 date: 2020-04-02 10:00:00 +0100
 categories: [networking]
 tags: []
-image:
-  path: "../../assets/img/posts/2020-04-02/fig1-junos-sec-policies.png"
-  lqip: 
+img_path: /assets/
+image: "img/posts/2020-04-02/fig1-junos-sec-policies.png"
 ---
 
 ## Syntax Highlighting for Cisco/Arista/Juniper CLI
