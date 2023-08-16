@@ -4,6 +4,9 @@ title: What is Network Automation?
 date: 2020-09-07 10:00:00 +0100
 categories: [networking]
 tags: [automation]
+img_path: /assets/img/posts/
+image: 
+  path: "2020-09-07/img-preview.jpg"
 ---
 
 ## What is Network Automation?
