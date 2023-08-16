@@ -41,10 +41,6 @@ google_site_verification:
 
 google_analytics:
   id: "G-XKDS3E28YE" # Google Analytics Measurement ID
-  # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path: # the local PV cache data, friendly to visitors from GFW region
 
 theme_mode: # System color by default
 
@@ -56,7 +52,7 @@ theme_mode: # System color by default
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: assets/img/avatar/dmac_black.jpg
+avatar: assets/img/avatar/dmac_logo_black_bg.png
 
 toc: true
 
