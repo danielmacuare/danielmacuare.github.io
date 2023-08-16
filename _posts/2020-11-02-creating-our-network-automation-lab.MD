@@ -4,9 +4,10 @@ title: Creating our Network Automation Lab
 date: 2020-11-02 10:00:00 +0100
 categories: [networking]
 tags: [automation, lab]
+img_path: /assets/img/posts/
+image: 
+  path: "2020-11-02/img-preview.png"
 ---
-
-## Creating our Network Automation Lab (2020 Edition)
 
 One of the best ways to learn about a topic is to practice what you study, validate it, and always test your assumptions. In my opinion, there’s nothing that can substitute the hands-on experience you get by configuring and deploying your own network designs.
 
@@ -37,13 +38,13 @@ The cool thing about Vagrant is that it abstracts all the complexity of setting 
 
 At the end of this article, we will have built a Leaf-Spine topology like the following:
 
-![Leaf-Spine-Base-Topology](../../assets/img/posts/2020-02-11/fig1-leaf-spine-base.jpg){: w="900" h="600" }
+![Leaf-Spine-Base-Topology](2020-11-02/fig1-leaf-spine-base.jpg){: w="900" h="600" }
 _Figure 1 - Base Leaf-Spine Topology_
 
-![Leaf-Spine-P2P-Names](../../assets/img/posts/2020-02-11/fig2-leaf-spine-p2p-names.jpg){: w="900" h="600" }
+![Leaf-Spine-P2P-Names](2020-11-02/fig2-leaf-spine-p2p-names.jpg){: w="900" h="600" }
 _Figure 2 - Leaf-Spine Topology - Point to Point Names_
 
-![Leaf-Spine-P2P-IPs](../../assets/img/posts/2020-02-11/fig3-leaf-spine-p2p-ips.jpg){: w="900" h="600" }
+![Leaf-Spine-P2P-IPs](2020-11-02/fig3-leaf-spine-p2p-ips.jpg){: w="900" h="600" }
 _Figure 3 - Leaf-Spine Topology - Point to Point IPs_
 
 You can clone the [netlab-automation](https://github.com/danielmacuare/netlab-automation) repository and follow the instructions in this post to build a replica of this topology.
@@ -62,7 +63,7 @@ server02.vm.network "private_network", virtualbox__intnet: "mgmt-network", auto_
 
 In the snippet above, Virtualbox will provision a “Virtual Switch” (In software), and it will attach the “swp1” interfaces of each of the Cumulus VX boxes as well as the Eth1 interfaces of the servers to this switch. Next, you can see the Management network topology:
 
-![Leaf-Spine-Management-IPs](../../assets/img/posts/2020-02-11/fig4-leaf-spine-management-ips.jpg){: w="900" h="600" }
+![Leaf-Spine-Management-IPs](2020-11-02/fig4-leaf-spine-management-ips.jpg){: w="900" h="600" }
 _Figure 4 - Leaf-Spine Topology - Management IPs_
 
 > MGMT VRF: In Cumulus Linux 4.0 and later, a management VRF is enabled by default, and Vagrant attaches the interface eth0 to it for out of band management. In our case, we will additionally connect the first port (swp1), to the mgmt VRF to simulate a management network.
@@ -124,12 +125,12 @@ After the setup process has finished, you can run the following command to check
 vagrant global-status 
 ```
 
-![Vagrant-Global-Status-Output](../../assets/img/posts/2020-02-11/fig5-vagrant-global-status-output.png){: w="900" h="600" }
+![Vagrant-Global-Status-Output](2020-11-02/fig5-vagrant-global-status-output.png){: w="900" h="600" }
 _Figure 5 - Vagrant Global Status Output_
 
 You can additionally open VirtualBox to check the status of your VMs.
 
-![Virtualbox VMs List](../../assets/img/posts/2020-02-11/fig6-virtualbox-vms-list.png){: w="900" h="600" }
+![Virtualbox VMs List](2020-11-02/fig6-virtualbox-vms-list.jpg){: w="900" h="600" }
 _Figure 6 - Virtualbox VMs List_
 
 Last, to verify management connectivity, ssh to leaf01, run LLDP (It will take some minutes for LLDP to discover all devices in the mgmt-network), and ping some other devices to ensure they are reachable.
@@ -143,7 +144,7 @@ ping -I mgmt 10.2.3.200             # Automation Server
 ping -I mgmt 10.2.3.201             # Server 1 
 ```
 
-![Virtualbox VMs List](../../assets/img/posts/2020-02-11/fig7-show-lldp-output.png){: w="900" h="600" }
+![Virtualbox VMs List](2020-11-02/fig7-show-lldp-output.png){: w="900" h="600" }
 _Figure 7 - Show LLDP Command Output_
 
 **Congratulations, we have finished the lab setup!**. In the next posts, we will be adding more features to it and start playing with VXLAN/EVPN.

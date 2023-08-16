@@ -4,6 +4,9 @@ title: "From Wordpress to Jekyll: The joy of blogging again."
 date: 2023-08-14 00:00:00 +100
 categories: [networking]
 tags: [automation]
+img_path: /assets/img/posts/
+image: 
+  path: "2023-08-14/img-preview.jpg"
 ---
 
 ## Starting point

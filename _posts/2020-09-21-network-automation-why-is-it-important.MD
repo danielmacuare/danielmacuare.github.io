@@ -4,6 +4,9 @@ title: Network Automation - Why is it important?
 date: 2020-09-21 10:00:00 +0100
 categories: [networking]
 tags: [automation]
+img_path: /assets/img/posts/
+image: 
+  path: "2020-09-21/img-preview.png"
 ---
 
 ## Network Automation - Why is it important?
@@ -22,14 +25,14 @@ Sometimes we can overestimate the scope of a change and think – “I’ve done
 
 Let’s imagine you are starting a maintenance window: Your task today is to test 4 x LACP links (2 x 100G each) in 4 different switches and make sure that traffic is not interrupted if one of the links go down. To do this, you are going to shut down one of the links, monitor for 30 minutes and then bring it back.
 
-![Maintenance's Logical Diagram](../../assets/img/posts/2020-09-21/fig1-maintenance-logical-diagram.png){: w="900" h="600" }
+![Maintenance's Logical Diagram](2020-09-21/fig1-maintenance-logical-diagram.png){: w="900" h="600" }
 _Figure 1 - Maintenance's Logical Diagram_
 
 You reach the last device, and when shutting down one of the interfaces in FRK-MX480-04, you see that traffic suddenly stops flowing to LAS-MX480-00, so you quickly roll back the change, and the problem disappears. But what happened, how could something like this have gone wrong?
 
 While investigating the root cause of the problem, we start digging into the current configs (Try and see if you can find the culprit!!):
 
-![Maintenance's Logical Diagram](../../assets/img/posts/2020-09-21/fig2-maintenance-changes.png){: w="900" h="600" }
+![Maintenance's Logical Diagram](2020-09-21/fig2-maintenance-changes.png){: w="900" h="600" }
 _Figure 2 - Maintenance Changes_
 
 In the image above, we notice that FRK-MX480-04 was configured to expect at least two links to be up to mark the AE4 interface as operational but because one of the two interfaces went down, the AE4 link was immediately marked as down and traffic stopped flowing.
@@ -71,7 +74,7 @@ In the cloud market, all big players, AWS, Azure and Google cloud (The Top 3) ar
 
 Next, you can see a pretty cool map of all the regions and zones on which AWS has a presence on:
 
-[![AWS Infrastructure Map](../../assets/img/posts/2020-09-21/fig3-aws-infrastrusture-map.png){: w="900" h="600" }](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/){:target="_blank"}
+[![AWS Infrastructure Map](2020-09-21/fig3-aws-infrastrusture-map.jpg){: w="900" h="600" }](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/){:target="_blank"}
 
 In this post, we have seen how automation can help you make your network more consistent and help you to deploy and troubleshoot changes with more confidence. Next, we have seen how to reduce human error by proposing some changes to your workflow, like testing your changes in a dev environment and deploying your changes systematically in favour of manual CLI changes.
 
