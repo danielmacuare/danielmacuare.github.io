@@ -9,10 +9,6 @@ image:
   path: "2023-08-21/img-preview.webp"
 ---
 
-## TO-DO
-
-- Modify the date before deploying
-
 ## TLDR
 
 Installing a Python package was an extremely slow and painful process. I tried using Poetry at first and later switched to PIP. The problem was not related to the tooling as I initially thought. The workaround for this issue was to disable IPv6 only on the interface I was using to route traffic to the internet. I still let IPv6 be enabled on all other interfaces.
