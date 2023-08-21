@@ -15,7 +15,7 @@ Installing a Python package was an extremely slow and painful process. I tried u
 
 ## Problem
 
-For a while, I've had some issues while installing python packages only lab server. Installing even 2 or 3 python packages would take at least 3+ minutes.
+For a while, I've had some issues while installing python packages on my lab server. Installing even 2 or 3 python packages would take at least 3+ minutes.
 
 I was initially using Poetry and later switched to PIP. Although it got slightly better with PIP, the time required to install a package was still ridiculous.
 
@@ -28,7 +28,7 @@ _Figure 1 - Poetry: It took 131 Seconds to resolve dependencies (Similar to my i
 
 ## Root Cause
 
-By default, most of the newer Linux OS distros come with IPV6 enabled by default. This means that in some cases when using PIP, Poetry, or some other tools, they will attempt to initiate connections via booth IPv4 and IPv6 and, those connections will eventually timeout or succeed.
+By default, most of the newer Linux OS distros come with IPV6 enabled by default. This means that in some cases when using PIP, Poetry, or some other tools, they will attempt to initiate connections via both IPv4 and IPv6 and, those connections will eventually timeout or succeed.
 
 ### Happy Eyeballs
 
@@ -40,7 +40,7 @@ To efficiently manage both connections (IPv4 and I(Pv6), an algorithm called "Ha
 - Starting a new connection attempt does not affect previous attempts, as multiple connection attempts may occur in parallel.
 - Once one of the connection attempts succeeds (generally when the TCP handshake completes), all other connection attempts that have not yet succeeded SHOULD be canceled. Any address that was not yet attempted as a connection SHOULD be ignored. At that time, the asynchronous DNS query MAY be canceled as new addresses will not be used for this connection. However, the DNS client resolver SHOULD still process DNS replies from the network for a short period of time (recommended to be 1 second), as they will populate the DNS cache and can be used for subsequent connections.
 
-**That is the theory at least**. In practice, I couldn't find much information on how Ubuntu 22.04 implements this technique but I suspect that for every python package and every one of its dependencies, an initial connection via IPv6 was attempted and timing out to then fall back to IPv6 (Hopefully concurrently instead of serially).
+**That is the theory at least**. In practice, I couldn't find much information on how Ubuntu 22.04 implements this technique but I suspect that for every python package and every one of its dependencies, an initial connection via IPv6 was attempted and timing out to then fall back to IPv4 (Hopefully concurrently instead of serially).
 
 For this post, I'm going to use Ubuntu 22.04 for the explanation of how to confirm if this is your problem and then to offer a workaround. Below, you can see info on my distro:
 
