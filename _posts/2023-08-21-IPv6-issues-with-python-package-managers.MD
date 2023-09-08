@@ -2,7 +2,7 @@
 author: dmac
 title: "IPv6 Issues with Python Package Managers"
 date: 2023-08-21 00:00:00 +100
-categories: [networking]
+categories: [tools]
 tags: [python, linux]
 img_path: /assets/img/posts/
 image: 

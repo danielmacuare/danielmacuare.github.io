@@ -2,8 +2,8 @@
 author: dmac
 title: "From Wordpress to Jekyll: The joy of blogging again."
 date: 2023-08-14 00:00:00 +100
-categories: [networking]
-tags: [automation]
+categories: [tools]
+tags: [blogging]
 img_path: /assets/img/posts/
 image: 
   path: "2023-08-14/img-preview.webp"

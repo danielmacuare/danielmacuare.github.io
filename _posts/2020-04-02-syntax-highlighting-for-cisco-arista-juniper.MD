@@ -3,7 +3,7 @@ author: dmac
 title: Syntax Highlighting for Cisco/Arista/Juniper CLI
 date: 2020-04-02 10:00:00 +0100
 categories: [networking]
-tags: []
+tags: [linux]
 img_path: /assets/img/posts/
 image: 
   path: "2020-04-02/img-preview.webp"
