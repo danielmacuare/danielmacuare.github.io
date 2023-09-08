@@ -74,7 +74,7 @@ In the cloud market, all big players, AWS, Azure and Google cloud (The Top 3) ar
 
 Next, you can see a pretty cool map of all the regions and zones on which AWS has a presence on:
 
-[![AWS Infrastructure Map](2020-09-21/fig3-aws-infrastrusture-map.jpg){: w="900" h="600" }](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/){:target="_blank"}
+[![AWS Infrastructure Map](2020-09-21/fig3-aws-infrastrusture-map.webp){: w="900" h="600" }](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/){:target="_blank"}
 
 In this post, we have seen how automation can help you make your network more consistent and help you to deploy and troubleshoot changes with more confidence. Next, we have seen how to reduce human error by proposing some changes to your workflow, like testing your changes in a dev environment and deploying your changes systematically in favour of manual CLI changes.
 

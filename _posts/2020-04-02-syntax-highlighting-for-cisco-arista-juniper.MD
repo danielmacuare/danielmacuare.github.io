@@ -6,7 +6,7 @@ categories: [networking]
 tags: []
 img_path: /assets/img/posts/
 image: 
-  path: "2020-04-02/img-preview.jpg"
+  path: "2020-04-02/img-preview.webp"
 ---
 
 ## Syntax Highlighting for Cisco/Arista/Juniper CLI
@@ -21,27 +21,27 @@ Next, you can see examples of the syntax highlighting:
 
 ### Reading JunOS Firewall Rules
 
-![JunOS Security Policies](2020-04-02/fig1-junos-sec-policies.jpg)
+![JunOS Security Policies](2020-04-02/fig1-junos-sec-policies.webp)
 _Figure 1 - JunOS Firewall Rules_
 
 ### Reading Show ip bgp summary (Arista/Cisco)
 
-![EOS Show ip bgp summary](2020-04-02/fig2-eos-show-ip-bgp-summary.jpg)
+![EOS Show ip bgp summary](2020-04-02/fig2-eos-show-ip-bgp-summary.webp)
 _Figure 2 - (EOS/IOS) show ip bgp summary_
 
 ### Show interfaces (Arista/Cisco/Juniper)
 
-![show interfaces](2020-04-02/fig3-ios-show-interfaces.jpg)
+![show interfaces](2020-04-02/fig3-ios-show-interfaces.webp)
 _Figure 3 - (EOS/IOS) show interfaces_
 
 ### Reading route-maps (EOS/IOS)
 
-![show route-maps](2020-04-02/fig4-ios-show-route-maps.jpg)
+![show route-maps](2020-04-02/fig4-ios-show-route-maps.webp)
 _Figure 4 - (EOS/IOS) show route-maps_
 
 ### Reading Prefix Lists
 
-![show prefix list](2020-04-02/fig5-ios-prefix-lists.jpg)
+![show prefix list](2020-04-02/fig5-ios-prefix-lists.webp)
 _Figure 5 - (EOS/IOS) Prefix Lists_
 
 ## How can I try this?

@@ -6,7 +6,7 @@ categories: [networking]
 tags: [automation]
 img_path: /assets/img/posts/
 image: 
-  path: "2023-08-14/img-preview.jpg"
+  path: "2023-08-14/img-preview.webp"
 ---
 
 ## Starting point

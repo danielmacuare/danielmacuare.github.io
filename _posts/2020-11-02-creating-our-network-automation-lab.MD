@@ -38,13 +38,13 @@ The cool thing about Vagrant is that it abstracts all the complexity of setting 
 
 At the end of this article, we will have built a Leaf-Spine topology like the following:
 
-![Leaf-Spine-Base-Topology](2020-11-02/fig1-leaf-spine-base.jpg){: w="900" h="600" }
+![Leaf-Spine-Base-Topology](2020-11-02/fig1-leaf-spine-base.webp){: w="900" h="600" }
 _Figure 1 - Base Leaf-Spine Topology_
 
-![Leaf-Spine-P2P-Names](2020-11-02/fig2-leaf-spine-p2p-names.jpg){: w="900" h="600" }
+![Leaf-Spine-P2P-Names](2020-11-02/fig2-leaf-spine-p2p-names.webp){: w="900" h="600" }
 _Figure 2 - Leaf-Spine Topology - Point to Point Names_
 
-![Leaf-Spine-P2P-IPs](2020-11-02/fig3-leaf-spine-p2p-ips.jpg){: w="900" h="600" }
+![Leaf-Spine-P2P-IPs](2020-11-02/fig3-leaf-spine-p2p-ips.webp){: w="900" h="600" }
 _Figure 3 - Leaf-Spine Topology - Point to Point IPs_
 
 You can clone the [netlab-automation](https://github.com/danielmacuare/netlab-automation) repository and follow the instructions in this post to build a replica of this topology.
@@ -63,7 +63,7 @@ server02.vm.network "private_network", virtualbox__intnet: "mgmt-network", auto_
 
 In the snippet above, Virtualbox will provision a “Virtual Switch” (In software), and it will attach the “swp1” interfaces of each of the Cumulus VX boxes as well as the Eth1 interfaces of the servers to this switch. Next, you can see the Management network topology:
 
-![Leaf-Spine-Management-IPs](2020-11-02/fig4-leaf-spine-management-ips.jpg){: w="900" h="600" }
+![Leaf-Spine-Management-IPs](2020-11-02/fig4-leaf-spine-management-ips.webp){: w="900" h="600" }
 _Figure 4 - Leaf-Spine Topology - Management IPs_
 
 > MGMT VRF: In Cumulus Linux 4.0 and later, a management VRF is enabled by default, and Vagrant attaches the interface eth0 to it for out of band management. In our case, we will additionally connect the first port (swp1), to the mgmt VRF to simulate a management network.
@@ -130,7 +130,7 @@ _Figure 5 - Vagrant Global Status Output_
 
 You can additionally open VirtualBox to check the status of your VMs.
 
-![Virtualbox VMs List](2020-11-02/fig6-virtualbox-vms-list.jpg){: w="900" h="600" }
+![Virtualbox VMs List](2020-11-02/fig6-virtualbox-vms-list.webp){: w="900" h="600" }
 _Figure 6 - Virtualbox VMs List_
 
 Last, to verify management connectivity, ssh to leaf01, run LLDP (It will take some minutes for LLDP to discover all devices in the mgmt-network), and ping some other devices to ensure they are reachable.

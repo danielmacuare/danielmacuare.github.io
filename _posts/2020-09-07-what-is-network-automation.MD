@@ -6,7 +6,7 @@ categories: [networking]
 tags: [automation]
 img_path: /assets/img/posts/
 image: 
-  path: "2020-09-07/img-preview.jpg"
+  path: "2020-09-07/img-preview.webp"
 ---
 
 ## What is Network Automation?
