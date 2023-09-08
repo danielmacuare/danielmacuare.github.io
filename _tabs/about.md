@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-![Profile Picture](/assets/img/posts/about/dmac-white-blackbg.png.webp){: w="600" h="300" }
+![Profile Picture](/assets/img/posts/about/dmac-white-blackbg.webp.webp){: w="600" h="300" }
 
 # Welcome to my blog
 

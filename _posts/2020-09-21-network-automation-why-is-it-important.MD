@@ -6,7 +6,7 @@ categories: [networking]
 tags: [automation]
 img_path: /assets/img/posts/
 image: 
-  path: "2020-09-21/img-preview.png"
+  path: "2020-09-21/img-preview.webp"
 ---
 
 ## Network Automation - Why is it important?
@@ -25,14 +25,14 @@ Sometimes we can overestimate the scope of a change and think – “I’ve done
 
 Let’s imagine you are starting a maintenance window: Your task today is to test 4 x LACP links (2 x 100G each) in 4 different switches and make sure that traffic is not interrupted if one of the links go down. To do this, you are going to shut down one of the links, monitor for 30 minutes and then bring it back.
 
-![Maintenance's Logical Diagram](2020-09-21/fig1-maintenance-logical-diagram.png){: w="900" h="600" }
+![Maintenance's Logical Diagram](2020-09-21/fig1-maintenance-logical-diagram.webp){: w="900" h="600" }
 _Figure 1 - Maintenance's Logical Diagram_
 
 You reach the last device, and when shutting down one of the interfaces in FRK-MX480-04, you see that traffic suddenly stops flowing to LAS-MX480-00, so you quickly roll back the change, and the problem disappears. But what happened, how could something like this have gone wrong?
 
 While investigating the root cause of the problem, we start digging into the current configs (Try and see if you can find the culprit!!):
 
-![Maintenance's Logical Diagram](2020-09-21/fig2-maintenance-changes.png){: w="900" h="600" }
+![Maintenance's Logical Diagram](2020-09-21/fig2-maintenance-changes.webp){: w="900" h="600" }
 _Figure 2 - Maintenance Changes_
 
 In the image above, we notice that FRK-MX480-04 was configured to expect at least two links to be up to mark the AE4 interface as operational but because one of the two interfaces went down, the AE4 link was immediately marked as down and traffic stopped flowing.

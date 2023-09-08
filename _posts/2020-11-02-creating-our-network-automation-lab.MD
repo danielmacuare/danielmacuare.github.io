@@ -6,7 +6,7 @@ categories: [networking]
 tags: [automation, lab]
 img_path: /assets/img/posts/
 image: 
-  path: "2020-11-02/img-preview.png"
+  path: "2020-11-02/img-preview.webp"
 ---
 
 One of the best ways to learn about a topic is to practice what you study, validate it, and always test your assumptions. In my opinion, there’s nothing that can substitute the hands-on experience you get by configuring and deploying your own network designs.
@@ -125,7 +125,7 @@ After the setup process has finished, you can run the following command to check
 vagrant global-status 
 ```
 
-![Vagrant-Global-Status-Output](2020-11-02/fig5-vagrant-global-status-output.png){: w="900" h="600" }
+![Vagrant-Global-Status-Output](2020-11-02/fig5-vagrant-global-status-output.webp){: w="900" h="600" }
 _Figure 5 - Vagrant Global Status Output_
 
 You can additionally open VirtualBox to check the status of your VMs.
@@ -144,7 +144,7 @@ ping -I mgmt 10.2.3.200             # Automation Server
 ping -I mgmt 10.2.3.201             # Server 1 
 ```
 
-![Virtualbox VMs List](2020-11-02/fig7-show-lldp-output.png){: w="900" h="600" }
+![Virtualbox VMs List](2020-11-02/fig7-show-lldp-output.webp){: w="900" h="600" }
 _Figure 7 - Show LLDP Command Output_
 
 **Congratulations, we have finished the lab setup!**. In the next posts, we will be adding more features to it and start playing with VXLAN/EVPN.
