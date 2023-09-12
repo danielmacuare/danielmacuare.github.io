@@ -2,7 +2,7 @@
 author: dmac
 title: "ctop: Managing docker containers via the CLI"
 date: 2023-09-06 00:00:00 +100
-categories: [tooling]
+categories: [tools]
 tags: [docker]
 img_path: /assets/img/posts/
 image: 
