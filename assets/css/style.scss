@@ -1,7 +1,11 @@
 ---
 ---
 
-@import '{{ site.theme }}';
+/*!
+* @import '{{ site.theme }}';
+*/
+
+@import 'main';
 
 /* DANIEL CUSTOM STYLES GO HERE */
 .post .post-content img{
