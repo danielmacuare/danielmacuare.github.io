@@ -9,7 +9,7 @@ image:
   path: "2020-04-02/img-preview.webp"
 ---
 
-[netcli-highlight] Repo(https://github.com/danielmacuare/netcli-highlight)
+[netcli-highlight Repo](https://github.com/danielmacuare/netcli-highlight)
 
 ## Syntax Highlighting for Cisco/Arista/Juniper CLI
 
