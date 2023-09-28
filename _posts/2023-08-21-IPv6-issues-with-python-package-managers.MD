@@ -20,28 +20,51 @@ Installing a Python package was an extremely slow and painful process. I tried u
 
 For a while, I've had some issues while installing python packages on my lab server. Installing even 2 or 3 python packages would take at least 3+ minutes.
 
+This seems to be a common problem for many users. [Examples on Github Issues](https://github.com/python-poetry/poetry/issues/2094#issuecomment-616201046)
+
 I was initially using Poetry and later switched to PIP. Although it got slightly better with PIP, the time required to install a package was still ridiculous.
 
-After searching and trying many different things I found the solution to my problem. Note: This is just one of the possible solutions to the slowness in the installation of python packages using tools like PIP or Poetry.
+In the next video, I'm trying to install the pre-commit package (in the top tab) and I'm measuring how long it takes by prefacing the install with the `time` command. At the very end of the video, you will see it took **1 min and 02 seconds** to only install one package.
 
-Example from other [users on Github](https://github.com/python-poetry/poetry/issues/2094#issuecomment-616201046) (Unfortunately I couldn't save a screenshot of my issue and couldn't replicate it after applying the workaround):
+![Python Poetry Issues](2023-08-21/issues.gif)
+_Figure 1 - Poetry: Took 61 seconds to install the pre-commit package_
 
-![Python Poetry Issues](2023-08-21/poetry-slow-resolv-deps.webp)
-_Figure 1 - Poetry: It took 131 Seconds to resolve dependencies (Similar to my issue)_
+### PyPi IP Ranges
 
-## Possible Root Cause
+On the bottom tab of the `Figure 1` above, you can see that my server was first initiating an IPv6 connection to PiPy (Which uses Fastly to cache this response) to try and get the package. Then after a minute, it would switch to use IPv4 which would work almost instantaneously.
 
-By default, most of the newer Linux OS distros come with IPV6 enabled by default. This means that in some cases when using PIP, Poetry, or some other tools, they will attempt to initiate connections via IPv6 first and then via IPv4 (After a small delay). This is due to an algorithm called Happy Eyeballs, but we will look into that in a sec.
+The 2 Fastly's IP ranges used as destination IPs to initiate a connection are:
 
- In some cases, the IPv6 connections will timeout, as even Link-local IPv6 addresses will be preferred over IPv4 Private (but Natted) addresses to reach addresses on the internet.
+- `IPv6`: 2a04:4e42:400::233:443
+- `IPv4`: 151.101.64.223:443
 
-This is particularly painful when dealing with package managers as they will recursively try to download all the dependencies and sub-dependencies of a package. The problem with this approach is that the IPv6 connection will timeout at every step and that will considerably slow down the process to download the package via the IPv4 connection. I eventually was able to download the packages but it took way more time than necessary.
+As you can see, as of 18/09/23 those 2 are Fastly's owned IP Ranges
 
-In my case, I was not actively using IPv6 on my `ens18` interface but my system was trying to create IPv6 connections (which would timeout) to PyPi before attempting to use IPv4.
+You can try to replicate this by using the following command on macOS:
+
+```bash
+brew install ripgrep jq
+curl -k https://api.fastly.com/public-ip-list | jq | rg --passthru '151.101|2a04:4e42'
+```
+
+![Fastly IP Ranges](2023-08-21/fastly-ips.webp)
+_Figure 2 - Fastly's Owned IP Ranges_
+
+As you can see in `Figure 2`, the 2 IPs are owned by Fastly.
+
+## Root Cause
+
+By default, most of the newer Linux OS distros come with IPv6 enabled by default. This means that in some cases when using PIP, Poetry, or some other tools, they will attempt to initiate connections via IPv6 first and then will switch IPv4 (Theoretically, after a small delay). This is due to an algorithm called `Happy Eyeballs`, but we will look into that in a sec.
+
+In some cases, the IPv6 connections will timeout, as even Link-local IPv6 addresses will be preferred over IPv4 Private (but Natted) addresses to reach addresses on the internet.
+
+This is particularly painful when dealing with package managers as they will recursively try to download all the dependencies and sub-dependencies of a package. The problem with this approach is that if you are not using IPv6, the IPv6 connection will timeout at every step and that will considerably slow down the process to download the package via the IPv4 connection. I eventually was able to download the packages but it took way more time than necessary.
+
+In my case, I was not actively using IPv6 on my `ens18` interface but my system was trying to create IPv6 connections (which would timeout) to PyPi before attempting to use IPv4. You can see this behavior on `Figure 1`.
 
 ### Happy Eyeballs
 
-To efficiently manage both connections (IPv4 and IPv6), an algorithm called "Happy Eyeballs 2" has been defined in [RFC 8305](https://www.rfcreader.com/#rfc8305) which deprecated the original [RFC 6555](https://www.rfcreader.com/#rfc6555). The idea is that the server will initiate a connection, usually via IPv6 first, and then after a small delay (typically between 150 - 250 ms. 250 ms is recommended in the RFC), it should then attempt a 2nd connection via IPv4.
+To efficiently manage both connections (IPv4 and IPv6), an algorithm called `"Happy Eyeballs 2"` has been defined in [RFC 8305](https://www.rfcreader.com/#rfc8305) which deprecated the original [RFC 6555](https://www.rfcreader.com/#rfc6555). The idea is that the server will initiate a connection, usually via IPv6 first, and then after a small delay (typically between 150 - 250 ms. 250 ms is recommended in the RFC), it should then attempt a 2nd connection via IPv4.
 
 **Quotes from the RFC:**
 
@@ -49,12 +72,12 @@ To efficiently manage both connections (IPv4 and IPv6), an algorithm called "Hap
 - Starting a new connection attempt does not affect previous attempts, as multiple connection attempts may occur in parallel.
 - Once one of the connection attempts succeeds (generally when the TCP handshake completes), all other connection attempts that have not yet succeeded SHOULD be canceled. Any address that was not yet attempted as a connection SHOULD be ignored. At that time, the asynchronous DNS query MAY be canceled as new addresses will not be used for this connection. However, the DNS client resolver SHOULD still process DNS replies from the network for a short period of time (recommended to be 1 second), as they will populate the DNS cache and can be used for subsequent connections.
 
-**That is the theory at least**. In practice, I couldn't find much information on how Ubuntu 22.04 implements this technique but I suspect that for every python package and every one of its dependencies, an initial connection via IPv6 was attempted and timing out to then fall back to IPv4 (Hopefully concurrently instead of serially).
+**That is the theory at least**. In practice, I couldn't find much information on how Ubuntu 22.04 implements this technique but we can see in the video on `Figure 1` that for every python package and every one of its dependencies, an initial connection via IPv6 was attempted and only after timing out, it would then fall back to IPv4.
 
-For this post, I'm going to use Ubuntu 22.04 for the explanation of how to confirm if this is your problem and then to offer a workaround. Below, you can see info on my distro:
+For this post, I'm going to use Ubuntu 22.04 to explain how to check if this is your problem and then to offer a workaround. Below, you can see info on my distro:
 
 ![Ubuntu 22.04](2023-08-21/ubuntu2204.webp)
-_Figure 2 - Distro Info_
+_Figure 3 - Distro Info_
 
 ### How to check if IPv6 is enabled in your system
 
@@ -65,7 +88,7 @@ sysctl -a 2>/dev/null | grep disable_ipv6
 ```
 
 ![IPv6 status Linux](2023-08-21/ipv6-status-linux.webp)
-_Figure 3 - IPv6 Enabled (0) on all the interfaces_
+_Figure 4 - IPv6 Enabled (0) on all the interfaces_
 
 - 0 - Means that IPv6 is **Enabled**
 - 1 - Means that IPv6 is **Disabled**
@@ -104,12 +127,17 @@ sudo sysctl -w net.ipv6.conf.ens18.disable_ipv6=1 # Disable IPv6 on the ens18 in
 
 ### Test if that fixed your problem by installing some python packages
 
+Examples:
+
 ```bash
 poetry add rich nornir nornir_napalm
 pip install rich nornir nornir_napalm
 ```
 
-At this stage, I managed to reduce the installation of 3 packages **from 3+ minutes to less than 1 minute.**
+![Issue Fixed](2023-08-21/after-fixing-issues.gif)
+_Figure 5 - Poetry: After disabling IPv6 on ens18_
+
+On the video above, you can see that after disabling IPv6 on the interface ens18, the time it took to install the `pre-commit` package decreased **from 61 seconds to ONLY 1 Second! :)**
 
 If that has worked for you, congratulations!!
 
@@ -159,7 +187,7 @@ ipv6-status | grep ens18
 cat /proc/sys/net/ipv6/conf/ens18/disable_ipv6
 ```
 
-4 - Reboot the system if possible to test 
+4 - Reboot the system if possible to test
 
 ```bash
 shutdown -r 02:00 # Schedules a reboot at 2:00 AM
@@ -169,6 +197,7 @@ shutdown -c # (Optional) to cancel the scheduled shutdown
 If you have faced this issue, I would love to hear how you solved it
 
 ## References
+
 - [RFC 6724 - Default Address Selection for Internet Protocol Version 6 (IPv6)](https://www.rfcreader.com/#rfc6724)
 - [Permanently Disable IPv6](https://linuxconfig.org/how-to-disable-ipv6-address-on-ubuntu-22-04-lts-jammy-jellyfish)
 - [RFC 8305  - Happy Eyeballs Version 2: Better Connectivity Using Concurrency](https://www.rfcreader.com/#rfc8305)
