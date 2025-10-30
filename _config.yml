@@ -5,7 +5,8 @@ baseurl: ""
 
 lang: en
 
-timezone: "Europe/London"
+# Change to your timezone › https://zones.arilyn.cc
+timezone: "Europe/Madrid"
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -34,13 +35,20 @@ social:
     - https://twitter.com/techdmac
     - https://github.com/danielmacuare
 
-google_site_verification: 
+webmaster_verifications:
+  google: # fill in your Google verification code
+  bing: # fill in your Bing verification code
+  alexa: # fill in your Alexa verification code
+  yandex: # fill in your Yandex verification code
+  baidu: # fill in your Baidu verification code
+  facebook: # fill in your Facebook verification code
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
-google_analytics:
-  id: "G-XKDS3E28YE" # Google Analytics Measurement ID
+analytics:
+  google:
+    id: "G-XKDS3E28YE" # Google Analytics Measurement ID
 
 theme_mode: # System color by default
 
@@ -49,7 +57,7 @@ theme_mode: # System color by default
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+cdn:
 
 # the avatar on sidebar, support local or CORS resources
 avatar: assets/img/avatar/dmac_logo_black_bg.png
@@ -57,8 +65,9 @@ avatar: assets/img/avatar/dmac_logo_black_bg.png
 toc: true
 
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
-  # The active options are as follows:
+  # Global switch for the post-comment system. Keeping it empty means disabled.
+  provider: # [disqus | utterances | giscus]
+  # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
@@ -82,7 +91,7 @@ assets:
     enabled: # boolean, keep empty means false
     # specify the Jekyll environment, empty means both
     # only works if `assets.self_host.enabled` is 'true'
-    env: # [development|production]
+    env: # [development | production]
 
 pwa:
   enabled: true # the option for PWA feature
@@ -92,6 +101,7 @@ paginate: 10
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
   syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: highlight
@@ -128,14 +138,6 @@ defaults:
     values:
       layout: page
       permalink: /:title/
-  - scope:
-      path: assets/img/favicons
-    values:
-      swcache: true
-  - scope:
-      path: assets/js/dist
-    values:
-      swcache: true
 
 sass:
   style: compressed
@@ -152,13 +154,13 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - docs
   - tools
   - README.md
-  - CHANGELOG.md
   - LICENSE
-  - rollup.config.js
-  - node_modules
-  - package*.json
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
 
 jekyll-archives:
   enabled: [categories, tags]

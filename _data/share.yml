@@ -2,8 +2,7 @@
 #  Icons from <https://fontawesome.com/>
 
 platforms:
-  - type: Linkedin
-    icon: "fab fa-linkedin"
+  - type: Linkedin    icon: "fab fa-linkedin"
     link: "https://www.linkedin.com/sharing/share-offsite/?url=URL"
 
   - type: Twitter
