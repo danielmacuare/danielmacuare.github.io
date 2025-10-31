@@ -4,9 +4,8 @@ title: "Python Typer: Powerful CLI Apps"
 date: 2023-09-20 00:00:00 +100
 categories: [tools]
 tags: [python]
-img_path: /assets/img/posts/
 image: 
-  path: "2023-09-20/img-preview.webp"
+  path: "/assets/img/posts/2023-09-20/img-preview.webp"
 ---
 
 ## Why Typer
@@ -50,7 +49,7 @@ Next, we will see the commands that the users will be executing to get all the f
 
 ### Discover Command
 
-![Discover Command](2023-09-20/discover.gif)
+![Discover Command](/assets/img/posts/2023-09-20/discover.gif)
 _Figure 1 - Discover Command_
 
 - Discover network devices on a particular subnet
@@ -64,7 +63,7 @@ python main.py discover device chi-leaf-04
 
 ### Add Command
 
-![Add Command](2023-09-20/add.gif)
+![Add Command](/assets/img/posts/2023-09-20/add.gif)
 _Figure 2 - Add Command_
 
 - Add all discovered devices to Netbox
@@ -80,7 +79,7 @@ python main.py add -s chi-leaf-04
 
 ### Show Command
 
-![Show Command](2023-09-20/show.gif)
+![Show Command](/assets/img/posts/2023-09-20/show.gif)
 _Figure 3 - Show Command_
 
 - Show devices and subnets available in Netbox
@@ -98,7 +97,7 @@ python main.py show local subnets
 
 ### Delete Command
 
-![Delete Command](2023-09-20/delete.gif)
+![Delete Command](/assets/img/posts/2023-09-20/delete.gif)
 _Figure 4 - Delete Command_
 
 - Delete all devices available in Netbox

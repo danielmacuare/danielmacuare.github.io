@@ -4,9 +4,8 @@ title: "IPv6 Issues with Python Package Managers"
 date: 2023-08-21 00:00:00 +100
 categories: [tools]
 tags: [python, linux]
-img_path: /assets/img/posts/
 image: 
-  path: "2023-08-21/img-preview.webp"
+  path: "/assets/img/posts/2023-08-21/img-preview.webp"
 ---
 
 ## TLDR
@@ -26,7 +25,7 @@ I was initially using Poetry and later switched to PIP. Although it got slightly
 
 In the next video, I'm trying to install the pre-commit package (in the top tab) and I'm measuring how long it takes by prefacing the install with the `time` command. At the very end of the video, you will see it took **1 min and 02 seconds** to only install one package.
 
-![Python Poetry Issues](2023-08-21/issues.gif)
+![Python Poetry Issues](/assets/img/posts/2023-08-21/issues.gif)
 _Figure 1 - Poetry: Took 61 seconds to install the pre-commit package_
 
 ### PyPi IP Ranges
@@ -47,7 +46,7 @@ brew install ripgrep jq
 curl -k https://api.fastly.com/public-ip-list | jq | rg --passthru '151.101|2a04:4e42'
 ```
 
-![Fastly IP Ranges](2023-08-21/fastly-ips.webp)
+![Fastly IP Ranges](/assets/img/posts/2023-08-21/fastly-ips.webp)
 _Figure 2 - Fastly's Owned IP Ranges_
 
 As you can see in `Figure 2`, the 2 IPs are owned by Fastly.
@@ -76,7 +75,7 @@ To efficiently manage both connections (IPv4 and IPv6), an algorithm called `"Ha
 
 For this post, I'm going to use Ubuntu 22.04 to explain how to check if this is your problem and then to offer a workaround. Below, you can see info on my distro:
 
-![Ubuntu 22.04](2023-08-21/ubuntu2204.webp)
+![Ubuntu 22.04](/assets/img/posts/2023-08-21/ubuntu2204.webp)
 _Figure 3 - Distro Info_
 
 ### How to check if IPv6 is enabled in your system
@@ -87,7 +86,7 @@ Use the command below to check if IPv6 is enabled. If the output returns:
 sysctl -a 2>/dev/null | grep disable_ipv6
 ```
 
-![IPv6 status Linux](2023-08-21/ipv6-status-linux.webp)
+![IPv6 status Linux](/assets/img/posts/2023-08-21/ipv6-status-linux.webp)
 _Figure 4 - IPv6 Enabled (0) on all the interfaces_
 
 - 0 - Means that IPv6 is **Enabled**
@@ -134,7 +133,7 @@ poetry add rich nornir nornir_napalm
 pip install rich nornir nornir_napalm
 ```
 
-![Issue Fixed](2023-08-21/after-fixing-issues.gif)
+![Issue Fixed](/assets/img/posts/2023-08-21/after-fixing-issues.gif)
 _Figure 5 - Poetry: After disabling IPv6 on ens18_
 
 On the video above, you can see that after disabling IPv6 on the interface ens18, the time it took to install the `pre-commit` package decreased **from 61 seconds to ONLY 1 Second! :)**
