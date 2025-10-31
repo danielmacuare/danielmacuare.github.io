@@ -2,9 +2,7 @@ name: "Build and Deploy"
 on:
   push:
     branches:
-      - main
-      - master
-      - upgrade-v7.4.1  # Temporary for testing
+      - prod
     paths-ignore:
       - .gitignore
       - README.md
@@ -43,7 +41,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.4
+          ruby-version: 3.3
           bundler-cache: true
 
       - name: Build site
