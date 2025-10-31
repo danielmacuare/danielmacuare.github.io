@@ -150,7 +150,7 @@ The upgrade to Jekyll Chirpy theme version 7.4.1 was successfully completed, but
        icon: "fab fa-linkedin"
        link: "https://www.linkedin.com/sharing/share-offsite/?url=URL"
      ```
-3. **Incorrect Image Paths**: 
+3. **Incorrect Image Paths**: Relative paths were changed to absolute paths
 
 BEFORE:
 

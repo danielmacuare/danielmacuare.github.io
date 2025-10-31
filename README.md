@@ -20,10 +20,12 @@ To fully use all the features of **Chirpy**, you need to copy the other critical
 
 To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
 
-## Usage
+## Local Testing after changes
 
-```console
-$ bundle
+```bash
+bundle exec jekyll serve -l
+OR
+bash tools/run.sh
 ```
 
 Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
