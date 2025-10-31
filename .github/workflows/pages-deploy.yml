@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - master
+      - upgrade-v7.4.1  # Temporary for testing
     paths-ignore:
       - .gitignore
       - README.md
