@@ -4,9 +4,8 @@ title: JNCIA Automation and DevOps Exam – What you need to know
 date: 2020-10-05 10:00:00 +0100
 categories: [networking]
 tags: [certs]
-img_path: /assets/img/posts/
 image: 
-  path: "2020-10-05/img-preview.webp"
+  path: "/assets/img/posts/2020-10-05/img-preview.webp"
 ---
 
 I recently took the Automation and DevOps, Associate [JNCIA-DevOps JN0-221](https://www.juniper.net/gb/en/training/certification/tracks/devops/jncia-devops.html?tab=jnciadevops") exam, and below, you will find some tips based on this experience. To be more specific, I will show you:

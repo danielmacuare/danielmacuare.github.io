@@ -4,9 +4,8 @@ title: "ctop: Managing docker containers via the CLI"
 date: 2023-09-11 00:00:00 +100
 categories: [tools]
 tags: [docker]
-img_path: /assets/img/posts/
 image: 
-  path: "2023-09-11/img-preview.webp"
+  path: "/assets/img/posts/2023-09-11/img-preview.webp"
 ---
 
 If you love to work with containers, keep reading, this article will be useful for you.
@@ -27,7 +26,7 @@ This got me thinking if there was a better way to manage these common tasks via 
 
 ## ctop
 
-![ctop](2023-09-11/ctop-containers.webp)
+![ctop](/assets/img/posts/2023-09-11/ctop-containers.webp)
 _Figure 1 - Containers View using cTOP_
 
 You can run ctop on your shell to perform all these simple tasks over your containers (Only Docker and runC container runtimes are supported at the moment):
@@ -41,7 +40,7 @@ With this tool, you can quickly perform the following tasks from one single plac
 
 ## ctop in Action
 
-![cTOP](2023-09-11/ctop-demo.gif)
+![cTOP](/assets/img/posts/2023-09-11/ctop-demo.gif)
 _Figure 2 - cTOP - Getting Container Info, CPU, Memory, Env Vars and Logs_
 
 ## How to install ctop
@@ -73,15 +72,15 @@ docker run --rm -ti \
 
 ## ctop Options
 
-Option | Description
---- | ---
-`-a`	| show active containers only
-`-f <string>` | set an initial filter string
-`-h`	| display help dialog
-`-i`  | invert default colors
-`-r`	| reverse container sort order
-`-s`  | select initial container sort field
-`-v`	| output version information and exit
+| Option        | Description                         |
+| ------------- | ----------------------------------- |
+| `-a`          | show active containers only         |
+| `-f <string>` | set an initial filter string        |
+| `-h`          | display help dialog                 |
+| `-i`          | invert default colors               |
+| `-r`          | reverse container sort order        |
+| `-s`          | select initial container sort field |
+| `-v`          | output version information and exit |
 
 ## ctop Keybindings
 
